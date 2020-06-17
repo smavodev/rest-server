@@ -13,7 +13,7 @@ app.use(bodyParser.json())
 
 //Peticion GET
 app.get('/usuario', function (req, res) {
-  res.json('Peticion  GET ejecutada - Local!');
+  res.json('Peticion  GET ejecutada');
 });
 
 //Peticion POST
