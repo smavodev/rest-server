@@ -1,12 +1,19 @@
+require('./config/config');
+
 const express = require('express');
 const app = express();
 
 app.get('/', function (req, res) {
-  res.send('Hello World!');
+  res.json('Hello World!');
 });
 
-app.listen(3000, () => {
-    console.log('Example app listening on port:', 3000);
+app.get('/usuario', function(req, res) {
+    res.json('get Usuario LOCAL!!!');
+});
+
+app.listen(process.env.PORT, () => {
+    console.log('Escuchando puerto: ', process.env.PORT);
+    console.log('Puerta de enlace '+'http://localhost:3000'+ process.env.PORT);
 });
   
 
