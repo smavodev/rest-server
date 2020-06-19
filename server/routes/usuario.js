@@ -7,7 +7,27 @@ const app = express();
 
 //Peticion GET
 app.get("/usuario", function (req, res) {
-    res.json("Peticion  GET ejecutada");
+    
+    Usuario.find({})
+        
+        .exec((err, usuarios) => {
+
+            if (err) {
+                return res.status(400).json({
+                    ok: false,
+                    err
+                });
+            }
+
+
+                res.json({
+                    ok: true,
+                    usuarios: usuarios
+                });
+
+            
+        });
+
   });
   
   //Peticion POST
