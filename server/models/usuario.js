@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 var uniqueValidator = require('mongoose-unique-validator');
 
 let rolesValidos = {
@@ -43,6 +44,15 @@ let usuarioSchema = new Schema({
     
 });
 
+// Para modificar la vista del password
+usuarioSchema.methods.toJSON = function() {
+    let user = this;
+    let userObject = user.toObject();
+    delete userObject.password;
+    return userObject;
+}
+
+// Validacion Personalizada
 usuarioSchema.plugin(uniqueValidator, { message: '{PATH} debe de ser único' });
 
 module.exports = mongoose.model('usuario', usuarioSchema);

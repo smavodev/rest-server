@@ -27,6 +27,9 @@ app.get("/usuario", function (req, res) {
                 err
             });
         }
+
+        /*usuarioDB.password = null; //ocultar password*/
+
         res.json({
             ok: true,
             usuario: usuarioDB
