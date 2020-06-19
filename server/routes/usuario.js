@@ -8,8 +8,15 @@ const app = express();
 //Peticion GET
 app.get("/usuario", function (req, res) {
     
+    let desde = req.query.desde || 0;
+    desde = Number(desde);
+
+    let limite = req.query.limite || 5;
+    limite = Number(limite);
+
     Usuario.find({})
-        
+        .skip(desde)
+        .limit(limite)
         .exec((err, usuarios) => {
 
             if (err) {
