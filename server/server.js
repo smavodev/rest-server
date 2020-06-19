@@ -50,7 +50,7 @@ app.delete("/usuario", function (req, res) {
 mongoose.connect('mongodb://localhost:27017/cafe', {useNewUrlParser: true, useUnifiedTopology: true}, (err, res) => {
   if (err) throw err;
   else{
-    console.log('Base de datos Conectada');
+    console.log('Base de datos Conectada'+'');
 
     app.listen(process.env.PORT, () => {
       /*console.log("Escuchando puerto: ", process.env.PORT);*/
