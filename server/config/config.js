@@ -6,7 +6,7 @@ process.env.PORT = process.env.PORT || 3000;
 process.env.NODE_ENV = process.env.NODE_ENV || "dev";
 
 
-// ============================ BD
+// ========= BD =========
 let urlDB;
 
 if (process.env.NODE_ENV || "dev") {
